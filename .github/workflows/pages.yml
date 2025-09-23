@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (static export via output: export)
+      - name: "Build (static export via output: export)"
         run: npm run build
 
       - name: Verify export folder
