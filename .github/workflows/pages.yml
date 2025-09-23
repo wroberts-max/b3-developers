@@ -18,32 +18,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'          # cache keyed by pnpm-lock.yaml
+          cache: 'npm'          # ✅ now uses package-lock.json
 
-      # 🔧 Install pnpm so the next steps can use it
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-          run_install: false
+      - name: Install dependencies
+        run: npm ci             # ✅ clean install from package-lock.json
 
-      - name: Install deps
-        run: pnpm install --frozen-lockfile
-
-      - name: Build
-        run: pnpm run build
+      - name: Build Next.js app
+        run: npm run build
 
       - name: Export static site
-        run: pnpm exec next export
+        run: npx next export
 
-      - name: SPA fallback (optional)
+      - name: Add SPA fallback (optional)
         run: |
           if [ -f "out/index.html" ]; then
             cp out/index.html out/404.html
