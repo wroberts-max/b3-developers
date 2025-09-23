@@ -25,12 +25,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'          # cache based on pnpm-lock.yaml
+          cache: 'pnpm'          # cache keyed by pnpm-lock.yaml
 
+      # 🔧 Install pnpm so the next steps can use it
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9             # or 'latest'
+          version: 9
+          run_install: false
 
       - name: Install deps
         run: pnpm install --frozen-lockfile
