@@ -25,10 +25,40 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'          # ✅ cache matches pnpm-lock.yaml
+          cache: 'pnpm'          # cache based on pnpm-lock.yaml
 
-      - name: Enable Corepack (pnpm)
-        run: corepack enable     # ✅ Node 20 includes Corepack
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9             # or 'latest'
 
       - name: Install deps
-        run: pnpm
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Export static site
+        run: pnpm exec next export
+
+      - name: SPA fallback (optional)
+        run: |
+          if [ -f "out/index.html" ]; then
+            cp out/index.html out/404.html
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
