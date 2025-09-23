@@ -231,7 +231,7 @@ export default function HomePage() {
               </Button>
               <div className="flex items-center gap-2 text-primary-foreground/90">
                 <Phone className="h-4 w-4" />
-                <span className="text-sm font-medium">(555) 123-4567</span>
+                <span className="text-sm font-medium">(601) 966-1960</span>
               </div>
             </div>
           </div>
@@ -274,11 +274,11 @@ export default function HomePage() {
               <div className="space-y-2 text-sm text-secondary-foreground/80">
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />
-                  <span>(555) 123-4567</span>
+                  <span>(602) 966-1960</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
-                  <span>info@b3developers.com</span>
+                  <span>wroberts@b3devs.com</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
