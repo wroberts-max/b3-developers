@@ -1,12 +1,8 @@
 /** @type {import('next').NextConfig} */
-const repoName = 'b3-developers';
-
 const nextConfig = {
-  output: 'export',
-  images: { unoptimized: true },
-  trailingSlash: true,
-  basePath: `/${repoName}`,
-  assetPrefix: `/${repoName}/`,
+  output: 'export',             // enables static export
+  images: { unoptimized: true },// required for GitHub Pages
+  trailingSlash: true,          // helps avoid routing issues
 };
 
 export default nextConfig;
