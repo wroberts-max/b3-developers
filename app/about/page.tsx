@@ -42,7 +42,7 @@ export default function AboutPage() {
                 gets the job done without unnecessary damage or delays.
               </p>
               <p className="mt-4 text-muted-foreground">
-                Our deep understanding of local terrain, environmental regulations, and development requirements means
+                Our deep understanding of local ground, environmental regulations, and development requirements means
                 we can anticipate challenges and provide solutions that keep your project on track and on budget.
               </p>
             </div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Local Expertise</h3>
                 <p className="text-muted-foreground">
-                  Deep knowledge of local terrain, regulations, and environmental considerations ensures compliant,
+                  Deep knowledge of local ground, regulations, and environmental considerations ensures compliant,
                   successful projects.
                 </p>
               </CardContent>
