@@ -274,7 +274,7 @@ export default function HomePage() {
               <div className="space-y-2 text-sm text-secondary-foreground/80">
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />
-                  <span>(602) 966-1960</span>
+                  <span>(601) 966-1960</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
