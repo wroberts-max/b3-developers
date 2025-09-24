@@ -257,7 +257,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                          <p className="text-muted-foreground mb-2">info@b3developers.com</p>
+                          <p className="text-muted-foreground mb-2">wroberts@b3devs.com</p>
                           <p className="text-sm text-muted-foreground">
                             Send us detailed project information or photos of your property
                           </p>
