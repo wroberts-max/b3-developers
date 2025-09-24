@@ -240,7 +240,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                          <p className="text-muted-foreground mb-2">(555) 123-4567</p>
+                          <p className="text-muted-foreground mb-2">(601) 966-1960</p>
                           <p className="text-sm text-muted-foreground">
                             Call us directly for immediate assistance or urgent project needs
                           </p>
