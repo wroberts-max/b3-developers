@@ -14,6 +14,24 @@ import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react"
 
 import { PROJECT_TYPES, PROPERTY_SIZES, TIMELINES, slugToLabel } from "@/lib/options"
 
+// --- Phone formatting helpers ---
+
+// Show (###) ###-#### as the user types
+const formatPhoneNumber = (value: string) => {
+  const cleaned = value.replace(/\D/g, ""); // keep digits only
+  const m = cleaned.match(/^(\d{0,3})(\d{0,3})(\d{0,4})$/);
+  if (!m) return value;
+
+  let out = "";
+  if (m[1]) out = `(${m[1]}`;
+  if (m[2]) out += `) ${m[2]}`;
+  if (m[3]) out += `-${m[3]}`;
+  return out;
+};
+
+// Send only digits to your backend / Google Form
+const cleanPhoneNumber = (value: string) => value.replace(/\D/g, "");
+
 // ✅ Your Google Form ID from the URL you sent
 const GOOGLE_FORM_ID =
   "1FAIpQLSeybTR9EFUW3wqqfb3OrE4-_Hmd2vKVxkcvRaM-XUJx1WhtdA"
@@ -67,7 +85,7 @@ export default function ContactPage() {
       const payload = new URLSearchParams()
       payload.set(GOOGLE_ENTRY_MAP.name, formData.name)
       payload.set(GOOGLE_ENTRY_MAP.email, formData.email)
-      payload.set(GOOGLE_ENTRY_MAP.phone, formData.phone)
+      payload.set(GOOGLE_ENTRY_MAP.phone, cleanPhoneNumber(formData.phone));
 
       // Convert slugs -> labels so they EXACTLY match Google’s dropdown text
       payload.set(GOOGLE_ENTRY_MAP.projectType,  slugToLabel(formData.projectType,  PROJECT_TYPES))
@@ -180,9 +198,17 @@ export default function ContactPage() {
 
                     <div>
                       <Label htmlFor="phone">Phone Number *</Label>
-                      <Input id="phone" name="phone" type="tel" required
-                        value={formData.phone} onChange={(e) => handleInputChange("phone", e.target.value)}
-                        placeholder="(601) 966-1960" />
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        inputMode="tel"
+                        autoComplete="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange("phone", formatPhoneNumber(e.target.value))}
+                        placeholder="(555) 384-4912"
+                      />
                     </div>
 
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
