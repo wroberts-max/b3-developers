@@ -29,7 +29,7 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="default" size="lg" asChild>
+              <Button variant="destructive" size="lg" asChild>
                 <Link href="/services">View Services</Link>
               </Button>
             </div>
