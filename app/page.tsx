@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
-import { ArrowRight, CheckCircle, Phone, Mail, MapPin } from "lucide-react"
+import { ArrowRight, CheckCircle, Phone, Mail, MapPin, Shovel, TreePine, Route } from "lucide-react"
 
 // NEW — for service area popup
 import {
@@ -69,7 +69,7 @@ export default function HomePage() {
                 </Link>
               </Button>
               {/* changed from destructive -> outline for better contrast */}
-              <Button variant="outline" size="lg" asChild>
+              <Button variant="inverted" size="lg" asChild>
                 <Link href="/services">View Services</Link>
               </Button>
             </div>
@@ -89,7 +89,7 @@ export default function HomePage() {
               <div className="rounded-full bg-primary/10 p-3 mb-4">
                 <CheckCircle className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold">Right-Sized Equipment</h3>
+              <h3 className="text-lg font-semibold">The Right Equipment</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Efficient machinery that gets the job done without unnecessary damage or delays
               </p>
@@ -130,7 +130,7 @@ export default function HomePage() {
               <CardContent className="p-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="rounded-lg bg-primary/10 p-2">
-                    <div className="h-6 w-6 bg-primary rounded" />
+                    <TreePine className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold">Land Clearing & Mulching</h3>
                 </div>
@@ -148,7 +148,7 @@ export default function HomePage() {
               <CardContent className="p-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="rounded-lg bg-primary/10 p-2">
-                    <div className="h-6 w-6 bg-primary rounded" />
+                    <Shovel className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold">Dirt Work & Excavation</h3>
                 </div>
@@ -166,7 +166,7 @@ export default function HomePage() {
               <CardContent className="p-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="rounded-lg bg-primary/10 p-2">
-                    <div className="h-6 w-6 bg-primary rounded" />
+                    <Route className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold">Gravel Driveways</h3>
                 </div>

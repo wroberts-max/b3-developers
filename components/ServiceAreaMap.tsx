@@ -13,25 +13,40 @@ export default function ServiceAreaMap({ heightClass = "h-[420px]" }: { heightCl
     const map = new maplibregl.Map({
       container: ref.current,
       style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
-      center: [-89.1, 30.4],
+      center: [-89.1, 30.4], // Gulf Coast center
       zoom: 8,
     })
 
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right")
 
     map.on("load", () => {
-      map.addSource("service-area", { type: "geojson", data: "/service-area.geojson" })
+      map.addSource("service-area", {
+        type: "geojson",
+        data: "/service-area.geojson",
+      })
+
       map.addLayer({
         id: "service-area-fill",
         type: "fill",
         source: "service-area",
-        paint: { "fill-color": "#2563eb", "fill-opacity": 0.25 },
+        paint: {
+          "fill-color": "#2563eb", // blue fill
+          "fill-opacity": 0.25,
+        },
       })
+
       map.addLayer({
         id: "service-area-outline",
         type: "line",
         source: "service-area",
-        paint: { "line-color": "#2563eb", "line-width": 2 },
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+        },
+        paint: {
+          "line-color": "#1e40af", // darker outline
+          "line-width": 2,
+        },
       })
     })
 
