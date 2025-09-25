@@ -1,8 +1,47 @@
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { ArrowRight, CheckCircle, Phone, Mail, MapPin } from "lucide-react"
+
+// NEW — for service area popup
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import ServiceAreaMap from "@/components/ServiceAreaMap"
+
+function ServiceAreaDialog({ children }: { children: React.ReactNode }) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button
+          type="button"
+          className="select-text underline decoration-dotted underline-offset-4 hover:text-accent transition-colors"
+        >
+          {children}
+        </button>
+      </DialogTrigger>
+
+      <DialogContent className="max-w-4xl">
+        <DialogHeader>
+          <DialogTitle>Service Area — Mississippi Gulf Coast</DialogTitle>
+          <DialogDescription>
+            We primarily serve Harrison, Jackson, Hancock, and Stone counties. Nearby jobs by request.
+          </DialogDescription>
+        </DialogHeader>
+
+        {/* MapLibre-based shaded polygons from /public/service-area.geojson */}
+        <ServiceAreaMap heightClass="h-[420px]" />
+      </DialogContent>
+    </Dialog>
+  )
+}
 
 export default function HomePage() {
   return (
@@ -29,7 +68,8 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="destructive" size="lg" asChild>
+              {/* changed from destructive -> outline for better contrast */}
+              <Button variant="outline" size="lg" asChild>
                 <Link href="/services">View Services</Link>
               </Button>
             </div>
@@ -223,15 +263,25 @@ export default function HomePage() {
               provide a detailed plan for success.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button size="lg" variant="secondary" asChild>
+              {/* Use the high-contrast inverted variant on brand background */}
+              <Button variant="inverted" size="lg" asChild>
+                {/* If you didn't add variant="inverted", instead use:
+                    className="bg-white text-primary hover:bg-white/90"
+                */}
                 <Link href="/contact">
                   Get Free Quote
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
+
               <div className="flex items-center gap-2 text-primary-foreground/90">
-                <Phone className="h-4 w-4" />
-                <span className="text-sm font-medium">(601) 966-1960</span>
+                <Phone className="h-4 w-4 select-none" />
+                <a
+                  href="tel:+16019661960"
+                  className="text-sm font-medium select-text underline decoration-dotted underline-offset-4"
+                >
+                  (601) 966-1960
+                </a>
               </div>
             </div>
           </div>
@@ -273,16 +323,26 @@ export default function HomePage() {
               <h4 className="text-sm font-semibold mb-4">Contact</h4>
               <div className="space-y-2 text-sm text-secondary-foreground/80">
                 <div className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" />
-                  <span>(601) 966-1960</span>
+                  <Phone className="h-4 w-4 select-none" />
+                  <a
+                    href="tel:+16019661960"
+                    className="select-text underline decoration-dotted underline-offset-4"
+                  >
+                    (601) 966-1960
+                  </a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="h-4 w-4" />
-                  <span>wroberts@b3devs.com</span>
+                  <Mail className="h-4 w-4 select-none" />
+                  <a
+                    href="mailto:wroberts@b3devs.com"
+                    className="select-text underline decoration-dotted underline-offset-4 break-all"
+                  >
+                    wroberts@b3devs.com
+                  </a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" />
-                  <span>Serving the Mississippi Gulf Coast</span>
+                  <MapPin className="h-4 w-4 select-none" />
+                  <ServiceAreaDialog>Serving the Mississippi Gulf Coast</ServiceAreaDialog>
                 </div>
               </div>
             </div>
