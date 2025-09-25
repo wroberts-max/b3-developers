@@ -1,0 +1,19 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Service Area" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-89.75, 30.70],
+          [-88.85, 30.70],
+          [-88.85, 30.15],
+          [-89.75, 30.15],
+          [-89.75, 30.70]
+        ]]
+      }
+    }
+  ]
+}
