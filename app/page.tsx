@@ -51,15 +51,11 @@ export default function HomePage() {
         {/* Hero background image */}
         <div
           className="absolute inset-0"
-          style={{
-            backgroundImage: "url('/hero.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+          style={{ backgroundImage: "url('/hero.jpg')", backgroundSize: "cover", backgroundPosition: "center",}}
+      />
 
         {/* Gradient overlay to keep text readable */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/15" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
@@ -71,7 +67,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-secondary-foreground/90">
               From overgrown lots to development-ready sites, B3 DEVELOPERS delivers efficient land clearing, mulching,
-              and site preparation with right-sized equipment and local expertise.
+              and site preparation with right equipment and local expertise.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button size="lg" asChild>
@@ -82,7 +78,9 @@ export default function HomePage() {
               </Button>
               {/* changed from destructive -> outline for better contrast */}
               <Button variant="inverted" size="lg" asChild>
-                <Link href="/services">View Services</Link>
+                <Link href="/services">View Services
+                <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
@@ -307,7 +305,7 @@ export default function HomePage() {
             <div>
               <h3 className="text-lg font-semibold mb-4">B3 DEVELOPERS</h3>
               <p className="text-secondary-foreground/80 text-sm">
-                Professional land clearing and development services with local expertise and right-sized equipment for
+                Professional land clearing and development services with local expertise and right equipment for
                 efficient results.
               </p>
             </div>

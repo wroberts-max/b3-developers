@@ -2,7 +2,45 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
-import { ArrowRight, Award, Users, MapPin, Clock, Shield, Target } from "lucide-react"
+import { ArrowRight, Award, Users, Phone, Mail, MapPin, Clock, Shield, Target } from "lucide-react"
+
+// NEW — for service area popup
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import ServiceAreaMap from "@/components/ServiceAreaMap"
+
+function ServiceAreaDialog({ children }: { children: React.ReactNode }) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button
+          type="button"
+          className="select-text underline decoration-dotted underline-offset-4 hover:text-accent transition-colors"
+        >
+          {children}
+        </button>
+      </DialogTrigger>
+
+      <DialogContent className="max-w-4xl">
+        <DialogHeader>
+          <DialogTitle>Service Area — Mississippi Gulf Coast</DialogTitle>
+          <DialogDescription>
+            We primarily serve Harrison, Jackson, Hancock, and Stone counties. Nearby jobs by request.
+          </DialogDescription>
+        </DialogHeader>
+
+        {/* MapLibre-based shaded polygons from /public/service-area.geojson */}
+        <ServiceAreaMap heightClass="h-[420px]" />
+      </DialogContent>
+    </Dialog>
+  )
+}
 
 export default function AboutPage() {
   return (
@@ -38,7 +76,7 @@ export default function AboutPage() {
               </p>
               <p className="mt-4 text-muted-foreground">
                 We've seen too many land development projects delayed or over budget because of inadequate site
-                preparation. That's why we focus on doing things right the first time, using right-sized equipment that
+                preparation. That's why we focus on doing things right the first time, using most efficient equipment that
                 gets the job done without unnecessary damage or delays.
               </p>
               <p className="mt-4 text-muted-foreground">
@@ -53,7 +91,7 @@ export default function AboutPage() {
                     <div className="rounded-full bg-primary/10 p-3 mx-auto mb-4 w-fit">
                       <Award className="h-6 w-6 text-primary" />
                     </div>
-                    <div className="text-2xl font-bold text-foreground">10+</div>
+                    <div className="text-2xl font-bold text-foreground">8+</div>
                     <div className="text-sm text-muted-foreground">Years Experience</div>
                   </CardContent>
                 </Card>
@@ -62,8 +100,8 @@ export default function AboutPage() {
                     <div className="rounded-full bg-primary/10 p-3 mx-auto mb-4 w-fit">
                       <Users className="h-6 w-6 text-primary" />
                     </div>
-                    <div className="text-2xl font-bold text-foreground">500+</div>
-                    <div className="text-sm text-muted-foreground">Projects Completed</div>
+                    <div className="text-2xl font-bold text-foreground">100%</div>
+                    <div className="text-sm text-muted-foreground">Satifaction Guaranteed</div>
                   </CardContent>
                 </Card>
                 <Card>
@@ -119,7 +157,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Efficient Solutions</h3>
                 <p className="text-muted-foreground">
-                  Right-sized equipment and proven methods mean faster completion times without compromising quality or
+                  Right equipment and proven methods mean faster completion times without compromising quality or
                   environmental responsibility.
                 </p>
               </CardContent>
@@ -198,7 +236,7 @@ export default function AboutPage() {
                     <div className="h-2 w-2 bg-primary rounded-full" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">Right-Sized Equipment</h4>
+                    <h4 className="font-semibold text-foreground">Efficient Equipment</h4>
                     <p className="text-sm text-muted-foreground">
                       We use equipment that's perfectly sized for your project, maximizing efficiency while minimizing
                       impact
@@ -317,18 +355,84 @@ export default function AboutPage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="secondary" asChild>
                 <Link
                   href="/projects"
                   className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary"
                 >
                   See Our Work
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
+    
+      {/* Footer */}
+      <footer className="bg-secondary text-secondary-foreground">
+        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">B3 DEVELOPERS</h3>
+              <p className="text-secondary-foreground/80 text-sm">
+                Professional land clearing and development services with local expertise and right equipment for
+                efficient results.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-sm text-secondary-foreground/80">
+                <li>
+                  <Link href="/services" className="hover:text-accent transition-colors">
+                    Land Clearing & Mulching
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services" className="hover:text-accent transition-colors">
+                    Dirt Work & Excavation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services" className="hover:text-accent transition-colors">
+                    Gravel Driveways
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold mb-4">Contact</h4>
+              <div className="space-y-2 text-sm text-secondary-foreground/80">
+                <div className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 select-none" />
+                  <a
+                    href="tel:+16019661960"
+                    className="select-text underline decoration-dotted underline-offset-4"
+                  >
+                    (601) 966-1960
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="h-4 w-4 select-none" />
+                  <a
+                    href="mailto:wroberts@b3devs.com"
+                    className="select-text underline decoration-dotted underline-offset-4 break-all"
+                  >
+                    wroberts@b3devs.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 select-none" />
+                  <ServiceAreaDialog>Serving the Mississippi Gulf Coast</ServiceAreaDialog>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-secondary-foreground/20 pt-8 text-center text-sm text-secondary-foreground/60">
+            <p>&copy; 2025 B3 DEVELOPERS. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

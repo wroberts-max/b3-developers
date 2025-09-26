@@ -2,7 +2,45 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
-import { ArrowRight, Calendar, MapPin, Clock, CheckCircle } from "lucide-react"
+import { ArrowRight, Phone, Mail, Calendar, MapPin, Clock, CheckCircle } from "lucide-react"
+
+// NEW — for service area popup
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import ServiceAreaMap from "@/components/ServiceAreaMap"
+
+function ServiceAreaDialog({ children }: { children: React.ReactNode }) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button
+          type="button"
+          className="select-text underline decoration-dotted underline-offset-4 hover:text-accent transition-colors"
+        >
+          {children}
+        </button>
+      </DialogTrigger>
+
+      <DialogContent className="max-w-4xl">
+        <DialogHeader>
+          <DialogTitle>Service Area — Mississippi Gulf Coast</DialogTitle>
+          <DialogDescription>
+            We primarily serve Harrison, Jackson, Hancock, and Stone counties. Nearby jobs by request.
+          </DialogDescription>
+        </DialogHeader>
+
+        {/* MapLibre-based shaded polygons from /public/service-area.geojson */}
+        <ServiceAreaMap heightClass="h-[420px]" />
+      </DialogContent>
+    </Dialog>
+  )
+}
 
 const projects = [
   {
@@ -404,18 +442,84 @@ export default function ProjectsPage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+                            <Button size="lg" variant="secondary" asChild>
                 <Link
-                  href="/services"
+                  href="/about"
                   className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary"
                 >
-                  View Services
+                  About Us
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
+    
+      {/* Footer */}
+      <footer className="bg-secondary text-secondary-foreground">
+        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">B3 DEVELOPERS</h3>
+              <p className="text-secondary-foreground/80 text-sm">
+                Professional land clearing and development services with local expertise and right equipment for
+                efficient results.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-sm text-secondary-foreground/80">
+                <li>
+                  <Link href="/services" className="hover:text-accent transition-colors">
+                    Land Clearing & Mulching
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services" className="hover:text-accent transition-colors">
+                    Dirt Work & Excavation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services" className="hover:text-accent transition-colors">
+                    Gravel Driveways
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold mb-4">Contact</h4>
+              <div className="space-y-2 text-sm text-secondary-foreground/80">
+                <div className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 select-none" />
+                  <a
+                    href="tel:+16019661960"
+                    className="select-text underline decoration-dotted underline-offset-4"
+                  >
+                    (601) 966-1960
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="h-4 w-4 select-none" />
+                  <a
+                    href="mailto:wroberts@b3devs.com"
+                    className="select-text underline decoration-dotted underline-offset-4 break-all"
+                  >
+                    wroberts@b3devs.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 select-none" />
+                  <ServiceAreaDialog>Serving the Mississippi Gulf Coast</ServiceAreaDialog>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-secondary-foreground/20 pt-8 text-center text-sm text-secondary-foreground/60">
+            <p>&copy; 2025 B3 DEVELOPERS. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
