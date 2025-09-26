@@ -82,7 +82,7 @@ const projects = [
       "Improved site drainage",
       "Reduced maintenance costs",
     ],
-    beforeImage: "/muddy-poor-access-road-commercial.jpg",
+    beforeImage: "/Muddy 1.jpg",
     afterImage: "/professional-gravel-access-road-commercial.jpg",
   },
   {
@@ -102,8 +102,8 @@ const projects = [
       "Maintained privacy screening",
       "Prepared area for landscaping",
     ],
-    beforeImage: "/overgrown-residential-property-undergrowth.jpg",
-    afterImage: "/cleared-residential-yard-with-mature-trees.jpg",
+    beforeImage: "/LOT Before.jpg",
+    afterImage: "/LOT After.jpg",
   },
   {
     id: 4,
@@ -152,12 +152,12 @@ export default function ProjectsPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-4xl grid-cols-2 gap-8 lg:grid-cols-4">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">500+</div>
-              <div className="text-sm text-muted-foreground">Projects Completed</div>
+              <div className="text-3xl font-bold text-primary">8+</div>
+              <div className="text-sm text-muted-foreground">Years of Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">2,000+</div>
-              <div className="text-sm text-muted-foreground">Acres Cleared</div>
+              <div className="text-3xl font-bold text-primary">100%</div>
+              <div className="text-sm text-muted-foreground">Safety Complience</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">98%</div>
@@ -175,9 +175,9 @@ export default function ProjectsPage() {
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Featured Projects</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Example Projects</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Real results from real projects across residential, commercial, and agricultural properties
+              B3 Developers is ready to deliver the following:
             </p>
           </div>
 
@@ -275,7 +275,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Client Testimonials */}
+      {/* Client Testimonials 
       <section className="py-24 bg-muted/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
@@ -353,7 +353,7 @@ export default function ProjectsPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Project Types */}
       <section className="py-24">
