@@ -48,7 +48,19 @@ export default function HomePage() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative bg-secondary text-secondary-foreground">
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 to-secondary/80" />
+        {/* Hero background image */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/hero.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+
+        {/* Gradient overlay to keep text readable */}
+        <div className="absolute inset-0 bg-black/60" />
+
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <Badge variant="secondary" className="mb-4 bg-accent text-accent-foreground">
