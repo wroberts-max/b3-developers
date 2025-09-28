@@ -28,7 +28,7 @@ export function Navigation() {
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
               <Image
-                src="/B3-Header-Logo.png"
+                src="/B3-Header-Logo.jpg"
                 alt="B3 Developers Logo"
                 width={40}
                 height={40}
@@ -93,7 +93,7 @@ export function Navigation() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Image
-                  src="/B3-Header-Logo.png"
+                  src="/B3-Header-Logo.jpg"
                   alt="B3 Developers Logo"
                   width={32}
                   height={32}
