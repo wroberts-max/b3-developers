@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -25,8 +26,15 @@ export function Navigation() {
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5">
-              <span className="text-2xl font-bold text-primary">B3 DEVELOPERS</span>
+            <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
+              <Image
+                src="/B3 Header Logo.png"
+                alt="B3 Developers Logo"
+                width={40}
+                height={40}
+                priority
+              />
+              <span className="text-2xl font-bold text-primary">DEVELOPERS</span>
             </Link>
           </div>
 
