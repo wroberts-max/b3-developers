@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   description:
     "Professional land clearing, mulching, dirt work, and gravel driveway services. Right-sized equipment for efficient, professional results.",
   generator: "v0.app",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" }, // classic desktop favicon
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/favicon-180x180.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 }
 
 export default function RootLayout({
