@@ -87,8 +87,19 @@ export function Navigation() {
           {/* Panel: highest z so it overlays hero */}
           <div className="fixed inset-y-0 right-0 z-[999] w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border">
             <div className="flex items-center justify-between">
-              <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-                <span className="text-xl font-bold text-primary">B3 DEVELOPERS</span>
+              <Link
+                href="/"
+                className="-m-1.5 p-1.5 flex items-center gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Image
+                  src="/B3 Header Logo.png"
+                  alt="B3 Developers Logo"
+                  width={32}
+                  height={32}
+                  priority
+                />
+                <span className="text-xl font-bold text-primary">DEVELOPERS</span>
               </Link>
               <Button variant="ghost" className="-m-2.5 rounded-md p-2.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Close menu</span>
