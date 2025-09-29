@@ -102,8 +102,8 @@ const projects = [
       "Maintained privacy screening",
       "Prepared area for landscaping",
     ],
-    beforeImage: "/LOT Before.jpg",
-    afterImage: "public/LOT Before.JPG",
+    beforeImage: "/LOT Before.JPG",
+    afterImage: "/LOT After.JPG",
   },
   {
     id: 4,
