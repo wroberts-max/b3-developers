@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { ArrowRight, Phone, Mail, Calendar, MapPin, Clock, CheckCircle } from "lucide-react"
+import { Metadata } from "next"
 
 // NEW — for service area popup
 import {
@@ -14,6 +15,30 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import ServiceAreaMap from "@/components/ServiceAreaMap"
+
+export const metadata: Metadata = {
+  title: "Recent Projects | Land Clearing & Driveway Work by B3 Developers",
+  description:
+    "See before-and-after results of B3 Developers' land clearing, forestry mulching, and gravel driveway projects across Biloxi and the Gulf Coast.",
+  alternates: { canonical: "https://b3devs.com/projects/" },
+  openGraph: {
+    title: "Recent Projects | Land Clearing & Driveway Work by B3 Developers",
+    description:
+      "Browse examples of completed land clearing, mulching, excavation, and driveway projects by B3 Developers.",
+    url: "https://b3devs.com/projects/",
+    siteName: "B3 Developers",
+    images: [
+      {
+        url: "https://b3devs.com/images/projects.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Before and after land clearing project by B3 Developers",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+}
 
 function ServiceAreaDialog({ children }: { children: React.ReactNode }) {
   return (

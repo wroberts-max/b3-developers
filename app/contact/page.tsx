@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { CircleCheck, ArrowRight, Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react"
-
+import {Metadata} from "next"
 import { PROJECT_TYPES, PROPERTY_SIZES, TIMELINES, slugToLabel } from "@/lib/options"
 
 // NEW — for service area popup
@@ -24,6 +24,30 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import ServiceAreaMap from "@/components/ServiceAreaMap"
+
+export const metadata: Metadata = {
+  title: "Contact B3 Developers | Free Estimate in Biloxi MS",
+  description:
+    "Get in touch with B3 Developers for land clearing, forestry mulching, and driveway services. Serving Biloxi, Gulfport, Ocean Springs, and surrounding Mississippi Gulf Coast areas.",
+  alternates: { canonical: "https://b3devs.com/contact/" },
+  openGraph: {
+    title: "Contact B3 Developers | Free Estimate in Biloxi MS",
+    description:
+      "Request a free estimate for land clearing, mulching, excavation, or driveway projects from B3 Developers.",
+    url: "https://b3devs.com/contact/",
+    siteName: "B3 Developers",
+    images: [
+      {
+        url: "https://b3devs.com/images/contact.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact B3 Developers for a free land clearing estimate",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+}
 
 function ServiceAreaDialog({ children }: { children: React.ReactNode }) {
   return (
