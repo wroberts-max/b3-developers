@@ -103,7 +103,7 @@ const projects = [
       "Prepared area for landscaping",
     ],
     beforeImage: "/LOT Before.jpg",
-    afterImage: "/LOT After.jpg",
+    afterImage: "public/LOT Before.JPG",
   },
   {
     id: 4,
