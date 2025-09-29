@@ -28,10 +28,10 @@ export function Navigation() {
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
               <Image
-                src="/B3-Header-logo.jpg"
+                src="/B3-Header-logo.png"
                 alt="B3 Developers Logo"
-                width={40}
-                height={40}
+                width={96}
+                height={96}
                 priority
               />
               <span className="text-2xl font-bold text-primary">DEVELOPERS</span>
@@ -93,10 +93,10 @@ export function Navigation() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Image
-                  src="/B3-Header-logo.jpg"
+                  src="/B3-Header-logo.png"
                   alt="B3 Developers Logo"
-                  width={32}
-                  height={32}
+                  width={72}
+                  height={72}
                   priority
                 />
                 <span className="text-xl font-bold text-primary">DEVELOPERS</span>
