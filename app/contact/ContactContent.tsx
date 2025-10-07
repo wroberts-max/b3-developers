@@ -393,8 +393,8 @@ export default function ContactContent() {
                 <CardContent className="p-6 space-y-4">
                   <div className="flex items-center gap-2">
                     <Phone className="h-4 w-4 select-none" />
-                    <a href="tel:+16019661960" className="select-text underline decoration-dotted underline-offset-4">
-                      (601) 966-1960
+                    <a href="tel:+16013855773" className="select-text underline decoration-dotted underline-offset-4">
+                      (601) 385-5773
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
@@ -483,8 +483,8 @@ export default function ContactContent() {
               <div className="space-y-2 text-sm text-secondary-foreground/80">
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4 select-none" />
-                  <a href="tel:+16019661960" className="select-text underline decoration-dotted underline-offset-4">
-                    (601) 966-1960
+                  <a href="tel:+16013855773" className="select-text underline decoration-dotted underline-offset-4">
+                    (601) 385-5773
                   </a>
                 </div>
                 <div className="flex items-center gap-2">

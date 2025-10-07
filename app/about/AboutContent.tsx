@@ -409,10 +409,10 @@ export default function AboutContent() {
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4 select-none" />
                   <a
-                    href="tel:+16019661960"
+                    href="tel:+16013855773"
                     className="select-text underline decoration-dotted underline-offset-4"
                   >
-                    (601) 966-1960
+                    (601) 385-5773
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
