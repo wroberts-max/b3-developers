@@ -51,7 +51,7 @@ export default function HomeContent() {
       {/* ========= Hero Section (now using next/image) ========= */}
       <section className="relative bg-secondary text-secondary-foreground">
         {/* Background image */}
-        <div className="absolute inset-0 -z-0">
+        <div className="absolute inset-0 -z-0 outline outline-2-red-500">
           <Image
             src="/Hero.jpg" // file must exist in /public/hero.jpg
             alt="Forestry mulching hero"
