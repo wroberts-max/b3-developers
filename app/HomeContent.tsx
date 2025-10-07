@@ -51,13 +51,14 @@ export default function HomeContent() {
       {/* ========= Hero Section (now using next/image) ========= */}
       <section className="relative bg-secondary text-secondary-foreground">
         {/* Background image */}
-        <div className="absolute inset-0 -z-0 outline outline-2-red-500">
+        <div className="absolute inset-0 -z-0">
           <Image
             src="/Hero.jpg" // file must exist in /public/hero.jpg
             alt="Forestry mulching hero"
             fill
             className="object-cover"
             priority
+            sizes="100vw"  // hint for better perf
           />
         </div>
 
@@ -65,7 +66,7 @@ export default function HomeContent() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
 
         {/* Content — ensure visible height */}
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 min-h-[55vh]">
+        <div className="relative z-0 mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 min-h-[55vh]">
           <div className="mx-auto max-w-2xl text-center">
             <Badge variant="secondary" className="mb-4 bg-accent text-accent-foreground">
               Professional Land Development
