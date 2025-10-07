@@ -53,7 +53,7 @@ export default function HomeContent() {
         {/* Background image */}
         <div className="absolute inset-0 -z-0">
           <Image
-            src="/hero.jpg" // file must exist in /public/hero.jpg
+            src="/Hero.jpg" // file must exist in /public/hero.jpg
             alt="Forestry mulching hero"
             fill
             className="object-cover"
