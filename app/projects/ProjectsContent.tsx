@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -63,8 +64,8 @@ const projects = [
       "Created proper drainage system",
       "Enabled on-time construction start",
     ],
-    beforeImage: "/overgrown-wooded-lot-before-clearing.jpg",
-    afterImage: "/cleared-development-site-with-preserved-trees.jpg",
+    beforeImage: "/projects/overgrown-wooded-lot-before-clearing.jpg",
+    afterImage: "/projects/cleared-development-site-with-preserved-trees.jpg",
   },
   {
     id: 2,
@@ -85,8 +86,8 @@ const projects = [
       "Improved site drainage",
       "Reduced maintenance costs",
     ],
-    beforeImage: "/muddy-1.jpg", // avoid spaces in filenames
-    afterImage: "/professional-gravel-access-road-commercial.jpg",
+    beforeImage: "/projects/muddy-1.jpg", // avoid spaces in filenames
+    afterImage: "/projects/professional-gravel-access-road-commercial.jpg",
   },
   {
     id: 3,
@@ -107,8 +108,8 @@ const projects = [
       "Maintained privacy screening",
       "Prepared area for landscaping",
     ],
-    beforeImage: "/lot-before.jpg",
-    afterImage: "/lot-after.jpg",
+    beforeImage: "/projects/lot-before.jpg",
+    afterImage: "/projects/lot-after.jpg",
   },
   {
     id: 4,
@@ -129,8 +130,8 @@ const projects = [
       "Removed invasive species",
       "Improved soil conditions",
     ],
-    beforeImage: "/abandoned-overgrown-farmland.jpg",
-    afterImage: "/cleared-agricultural-field-ready-for-farming.jpg",
+    beforeImage: "/projects/abandoned-overgrown-farmland.jpg",
+    afterImage: "/projects/cleared-agricultural-field-ready-for-farming.jpg",
   },
 ]
 
